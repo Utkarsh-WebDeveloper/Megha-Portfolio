@@ -15,7 +15,7 @@ import Img9 from "../assets/Img9.png";
 
 const surroundingImages = [Img1, Img2, null, Img4, Img8, null];
 
-export default function Hero() {
+export default function Hero({ onNavigateAbout }) {
   const root = useRef();
   const card = useRef();
   const paper = useRef();
@@ -115,6 +115,15 @@ export default function Hero() {
   return (
     <section className="hero" ref={root}>
       <div className="hero__inner">
+        <div className="hero-nav">
+          <button type="button" className="hero-chip hero-chip--active">
+            Home
+          </button>
+          <button type="button" className="hero-chip" onClick={onNavigateAbout}>
+            About
+          </button>
+        </div>
+
         <h3 className="hero__pre hero__title">Hey there, I'm</h3>
         <h1 className="hero__name hero__title">
           Megha Rana<span className="hero__dot">.</span>
